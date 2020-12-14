@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+	<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="pays" >
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="un_pays" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nom" type="xs:string"></xs:element>
+							<xs:element name="date_releve">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="format" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="donnees_demographique"/>
+							<xs:element ref="donnees_economique"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+		<!--- donnees_demographique -->
+		<xs:element name="donnees_demographique">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="population">
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="xs:string">
+									<xs:attribute name="echelle" type="xs:string"/>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="fecondite">
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="xs:string">
+									<xs:attribute name="relation" type="xs:string"/>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<!--- !!!!!!!!!!!!!!!! -->
+		
+		<!--- donnees_economique -->
+		<xs:element name="donnees_economique">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="pib" type="xs:long"></xs:element>
+					<xs:element name="monnaie" type="xs:string"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		
+		<!--- !!!!!!!!!!!!!!!! -->
+	</xs:schema>
