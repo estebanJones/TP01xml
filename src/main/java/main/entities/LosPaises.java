@@ -11,8 +11,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="pays")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LosPaises {
-	@XmlElement
+	@XmlElement(name="un_pays")
 	private List<Pays> pays = new ArrayList<>();
+	
+	
+	public LosPaises() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public LosPaises(List<Pays> pays) {
+		super();
+		this.pays = pays;
+	}
 
 	public List<Pays> getPays() {
 		return pays;

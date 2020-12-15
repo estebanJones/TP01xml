@@ -20,6 +20,12 @@ public class Pays {
 	public Pays() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	public Pays(String nom) {
+		this.nom = nom;
+	}
+
 
 	public String getNom() {
 		return nom;

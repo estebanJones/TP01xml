@@ -3,16 +3,15 @@ package main.entities;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlValue;
 
 @XmlRootElement(name="fecondite")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Fecondite {
-	@XmlAttribute(name="relation")
+	@XmlAttribute
 	private String relation;
-	@XmlValue()
+	@XmlValue
 	private String value;
 	
 	public Fecondite() {
